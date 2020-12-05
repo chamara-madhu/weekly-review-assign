@@ -125,14 +125,14 @@ function ReviewTable(props) {
                 <td className="p-0 border-left meeting-notes-td">
                   {el.meetingNotes.map((el, i) => (
                     <p key={i} className="notes">
+                      {el.note}{" "}
                       {el.status === "todo" ? (
                         <i className="fas fa-question"></i>
                       ) : el.status === "completed" ? (
                         <i className="fas fa-check"></i>
                       ) : (
                         <i className="fas fa-times"></i>
-                      )}{" "}
-                      {el.note}
+                      )}
                     </p>
                   ))}
                   <i
