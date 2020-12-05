@@ -1,5 +1,5 @@
 import React from "react";
-// import ReactTooltip from "react-tooltip";
+import ReactTooltip from "react-tooltip";
 
 function TableHead() {
   return (
@@ -89,11 +89,11 @@ function TableHead() {
         </th>
       </tr>
 
-      {/* <ReactTooltip
+      <ReactTooltip
         className="tooltip-cus"
         backgroundColor="#cca326"
         textColor="#000"
-      /> */}
+      />
     </thead>
   );
 }
