@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 function Sidebar(props) {
-  const [makeAcco, setMakeAcco] = useState(false);
-  const [modelAcco, setModelAcco] = useState(false);
+  const [makeAcco, setMakeAcco] = useState(true);
+  const [modelAcco, setModelAcco] = useState(true);
 
   return (
     <div className="admin-sidebar-col">

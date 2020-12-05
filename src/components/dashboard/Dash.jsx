@@ -8,6 +8,9 @@ import Filters from "./Filters";
 
 import "../../styles/review-table.css";
 
+import { weeklyReviews } from "../../localDb/weeklyReviews";
+import { teamLeaders } from "../../localDb/teamLeaders";
+
 function Dash() {
   const [weekReviews, setWeekReviews] = useState([]);
   const [teamLeader, setTeamLeader] = useState("");
@@ -25,6 +28,13 @@ function Dash() {
       const TL = JSON.parse(localStorage.getItem("weekly_Reviews"));
 
       setWeekReviews(TL);
+    } else {
+      localStorage.setItem("weekly_Reviews", JSON.stringify(weeklyReviews));
+      setWeekReviews(weeklyReviews);
+    }
+
+    if (!localStorage.getItem("team_leaders")) {
+      localStorage.setItem("team_leaders", JSON.stringify(teamLeaders));
     }
   }, []);
 

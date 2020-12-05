@@ -14,7 +14,9 @@ function ManageTeamLead() {
   }, []);
 
   const getNotUsedTL = (code) => {
-    const weeklyReviews = JSON.parse(localStorage.getItem("weekly_Reviews"));
+    const weeklyReviews = localStorage.getItem("weekly_Reviews")
+      ? JSON.parse(localStorage.getItem("weekly_Reviews"))
+      : [];
 
     const findTL = weeklyReviews.filter((el) => el.teamLeader.code === code);
 
@@ -42,28 +44,34 @@ function ManageTeamLead() {
             <table className="table table-hover common-table border">
               <thead>
                 <tr>
-                  <th>Code</th>
-                  <th>Name</th>
-                  <th className="text-center">Action</th>
+                  <th className="border-0">Code</th>
+                  <th className="border-0">Name</th>
+                  <th className="text-center border-0">Action</th>
                 </tr>
               </thead>
               <tbody>
-                {teamLeaders.map((el) => (
-                  <tr key={el.code}>
-                    <td>{el.code}</td>
-                    <td>{el.name}</td>
-                    <td align="center">
-                      {getNotUsedTL(el.code) ? (
-                        <i className="fas fa-trash-alt fa-trash-disabled"></i>
-                      ) : (
-                        <i
-                          className="fas fa-trash-alt"
-                          onClick={() => deleteTeamLeader(el.code)}
-                        ></i>
-                      )}
-                    </td>
+                {teamLeaders.length ? (
+                  teamLeaders.map((el) => (
+                    <tr key={el.code}>
+                      <td>{el.code}</td>
+                      <td>{el.name}</td>
+                      <td align="center">
+                        {getNotUsedTL(el.code) ? (
+                          <i className="fas fa-trash-alt fa-trash-disabled"></i>
+                        ) : (
+                          <i
+                            className="fas fa-trash-alt"
+                            onClick={() => deleteTeamLeader(el.code)}
+                          ></i>
+                        )}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="3">No Recods</td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>

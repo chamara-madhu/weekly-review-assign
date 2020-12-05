@@ -43,7 +43,6 @@ const initailState = {
 
 function AddWeeklyRev() {
   const [form, setForm] = useState(initailState);
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -162,8 +161,6 @@ function AddWeeklyRev() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      setLoading(true);
-
       const teamLeaders = localStorage.getItem("team_leaders")
         ? JSON.parse(localStorage.getItem("team_leaders"))
         : [];
@@ -220,10 +217,9 @@ function AddWeeklyRev() {
         localStorage.setItem("weekly_Reviews", JSON.stringify(WR));
       }
 
-      setLoading(false);
+      NotificationManager.success("Added successfully!", "Success");
       setForm(initailState);
       scrollToTop();
-      NotificationManager.success("Added successfully!", "Success");
     }
   };
 
@@ -263,15 +259,7 @@ function AddWeeklyRev() {
             onClick={handleSubmit}
             style={{ width: 100, float: "right" }}
           >
-            {loading ? (
-              <div
-                className="spinner-border spinner-border-sm text-light"
-                role="status"
-              >
-                <span className="sr-only">Loading...</span>
-              </div>
-            ) : null}
-            {loading ? "" : "Add"}
+            Add
           </button>
 
           <NotificationContainer />

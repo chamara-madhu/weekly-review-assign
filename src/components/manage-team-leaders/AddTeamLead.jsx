@@ -132,6 +132,7 @@ function AddTeamLead() {
                     name="code"
                     onChange={handleChange}
                     value={form.code}
+                    autoComplete="off"
                   />
                   <div className="invalid-feedback">{form.codeErr}</div>
                 </div>
@@ -150,6 +151,7 @@ function AddTeamLead() {
                     name="name"
                     onChange={handleChange}
                     value={form.name}
+                    autoComplete="off"
                   />
                   <div className="invalid-feedback">{form.nameErr}</div>
                 </div>
