@@ -1,0 +1,45 @@
+.review-table .team-lead-row {
+  background: #1d2336;
+  color: #fff;
+}
+
+.review-table .team-lead-row:hover {
+  background: #1d2336 !important;
+}
+
+.review-table .action-btn {
+  width: 125px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.review-table .action-btn option {
+  color: #333;
+}
+
+.review-table .meeting-notes-td {
+  position: relative;
+  padding: 0.75rem !important;
+}
+
+.review-table .meeting-notes-td .notes {
+  margin-bottom: 0;
+}
+
+.review-table .meeting-notes-td .notes .fa-check {
+  color: #14ac14;
+}
+
+.review-table .meeting-notes-td .notes .fa-times {
+  color: #e75151;
+}
+
+.review-table .meeting-notes-td .notes .fa-question {
+  color: #e3b62f;
+}
+
+.review-table .meeting-notes-td .edit-meeting-note {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+}

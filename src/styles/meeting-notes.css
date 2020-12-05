@@ -1,0 +1,31 @@
+.meeting-note-modal .modal-header {
+  background: #323d51;
+  color: #fff;
+}
+
+.meeting-note-modal .meeting-notes-table td {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.meeting-note-modal .add-btn {
+  width: 100px;
+  margin: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid #cca326 !important;
+  padding: 7px 15px;
+  color: #cca326;
+  text-align: center;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+.meeting-note-modal .add-btn:hover {
+  border: 1px solid #323d51 !important;
+  color: #323d51;
+}
+
+.meeting-note-modal .add-btn:focus {
+  box-shadow: none;
+}
