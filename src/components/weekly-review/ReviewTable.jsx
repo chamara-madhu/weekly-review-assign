@@ -7,9 +7,14 @@ function ReviewTable(props) {
     props.SortByStartDate.map((el) => (
       <tr key={el.id}>
         <td>
-          {moment.utc(el.week.start).local().format("DD MMM")}
-          {" - "}
-          {moment.utc(el.week.end).local().format("DD MMM YYYY")}
+          <p className="m-0">
+            {el.teamLeader.name + " - " + el.teamLeader.code}
+          </p>
+          <p className="m-0 text-muted">
+            {moment.utc(el.week.start).local().format("DD MMM")}
+            {" - "}
+            {moment.utc(el.week.end).local().format("DD MMM YYYY")}
+          </p>
         </td>
         <td className="p-0 border-left">
           <table className="w-100 text-center">
